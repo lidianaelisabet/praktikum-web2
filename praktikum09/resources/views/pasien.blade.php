@@ -80,35 +80,31 @@
             </div>
         </form>
         <hr>
-
+        
+        
         @php
             if (isset($_GET['submit'])) {
-               $nama = $_GET['nama'];
-               $tanggal_periksa = $_GET['tanggal_periksa'];
-               $tanggal_lahir = $_GET['tanggal_lahir'];
-               $jk = $_GET['jk'];
-               $tekanan_darah = $_GET['tekanan_darah'];
-               $asam = $_GET['asam'];
-               $kolesterol= $_GET['kolesterol'];
-               $gula = $_GET['gula'];
+                $nama = $_GET['nama'];
+                $tanggal_periksa = $_GET['tanggal_periksa'];
+                $tanggal_lahir = $_GET['tanggal_lahir'];
+                $jk = $_GET['jk'];
+                $tekanan_darah = $_GET['tekanan_darah'];
+                $asam = $_GET['asam'];
+                $kolesterol = $_GET['kolesterol'];
+                $gula = $_GET['gula'];
+                # code...
 
-               // tampilan hasil inputan
-               echo 'Nama :' . $nama . '<br>';
-               echo 'Nama :' . $tanggal_periksa . '<br>';
-               echo 'Nama :' . $tanggal_lahir . '<br>';
-               echo 'Nama :' . $jk . '<br>';
-               echo 'Nama :' . $tekanan_darah . '<br>';
-               echo 'Nama :' . $asam . '<br>';
-               echo 'Nama :' . $kolesterol . '<br>';
-               echo 'Nama :' . $gula . '<br>';
-
-
-
-
-
+                echo "Nama :" . $nama . "<br>";
+                echo "Tanggal Periksa :" . $tanggal_periksa . "<br>";
+                echo "Tanggal Lahir :" . $tanggal_lahir . "<br>";
+                echo "Jenis Kelamin :" . $jk . "<br>";
+                echo "Tekanan Darah :" . $tekanan_darah . "<br>";
+                echo "Asam :" . $asam . "<br>";
+                echo "Kolesterol :" . $kolesterol . "<br>";
+                echo "Gula :" . $gula . "<br>";
             }
         @endphp
-				// Tangkap dan tampilin hasil form menggunakan GET
+
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -1,4 +1,4 @@
 @php
- $nama = "Lidiana Elisabet";
- echo 'Apa Kabar' . $nama;
+    $nama = 'Sutra';
+    echo 'Apa Kabar' . $nama;
 @endphp

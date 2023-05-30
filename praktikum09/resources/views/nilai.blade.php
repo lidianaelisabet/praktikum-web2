@@ -1,16 +1,17 @@
 @php
-    $nama = "Lidiana"
-    $nilai = 90;
+    $nama = "sutra";
+    $nilai = 100;    
 @endphp
 
 @if ($nilai > 80)
     @php
-        $sket = 'lulus';
-    @endphp 
+        $ket = "Lulus";   
+    @endphp
+    
 @else
     @php
-        $sket = 'Gagal';
+        $ket = "Gagal";
     @endphp
 @endif
 
-Siswa {{$nama}} dinyatakan {{$sket}}
+Siswa {{$nama}} dinyatakan {{$ket}} 

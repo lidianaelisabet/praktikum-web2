@@ -13,24 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-// Buat rout salam
-Route::get('/salam', function () {
-    return 'Selamat datang';
+Route::get('/', function () {
+    return view('welcome');
 });
 
+Route::get('/salam', function () {
+    return "Selamat Datang";
+});
 
-// Buat route nilai
+Route::get('/kabar', function () {
+    return view('kondisi');
+});
+
 Route::get('/nilai', function () {
     return view('nilai');
 });
 
-// Buat Route pasien
 Route::get('/pasien', function () {
     return view('pasien');
 });
 
+Route::get('/form', [FormController::class, 'index']);
+
+Route::post('/hasil', [FormController::class, 'hasil']);
+
+Route::get('/skill', [SkillController::class, 'index']);
 
 
-
+Route::post('/skillhasil', [SkillController::class, 'skill']);
