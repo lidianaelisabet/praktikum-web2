@@ -4,8 +4,10 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\ProdukController;
+use App\Models\KategoriProduk;
 use Illuminate\Support\Facades\Route;
 
 
@@ -40,8 +42,6 @@ Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
 Route::get('/landingpage', [LandingpageController::class, 'index']);
 
 
-
-
 // bikin routing crud
 Route::get('/produk/create', [ProdukController::class, 'create']);
 // bikin routing untuk kirim data menggunakan store
@@ -56,3 +56,6 @@ Route::put('produk/update/{id}', [ProdukController::class, 'update']);
 
 // Bikin routing umtuk delete data menggunakan destory
 Route::get('produk/delete/{id}', [ProdukController::class, 'destroy']);
+
+// Bikin routing untuk kategori
+Route::get('/kategori', [KategoriController::class, 'index'])->name('Kategori');
