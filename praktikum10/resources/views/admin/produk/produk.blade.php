@@ -1,10 +1,10 @@
 @extends('admin.layout.appadmin')
 @section('content')
-	@if (session('success'))	
-        <div>
-            {{ session('success') }}
-        </div>
-     @endif   
+@if (Auth::user()->role != 'pelanggan')
+{{-- Disini Isi Konten --}}
+@else
+@include('admin.access_denied')
+@endif  
     <h1 class="mt-4">Tables</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -19,9 +19,10 @@
         </div>
     </div>
     <div class="card mb-4">
-        {{-- Bikin button create --}}
         <div class="card-header">
+            @if (Auth::user()->role == 'admin')
             <a class="btn btn-primary" href="{{ url('produk/create') }}">Create</a>
+        @endif
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -64,14 +65,16 @@
                             <td>{{$p->harga_beli}}</td>
                             <td>{{$p->stok}}</td>
                             <td>{{$p->minimal}}</td>
-                            <td>{{$p->deskripso}}</td>
-                            <td>{{$p->kategori_produk}}</td>
+                            <td>{{$p->deskripsi}}</td>
+                            <td>{{$p->nama_kategori}}</td>
                             {{-- Buat tombol --}}
                             <td>
                                 {{-- Buat tombol edit --}}
                                 <a href="{{ url('produk/edit/' . $p->id) }}" class="btn btn-warning">Edit</a>
                                 {{-- Buat tombol delete --}}
-                                <a href="{{ url('produk/delete/' . $p->id) }}" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus produk?')">Delete</a>
+                                @if (Auth::user()->role == 'admin')
+	        <a href="{{ url('produk/delete/' . $p->id) }}" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus produk?')">Delete</a>
+            @endif
                                   
                             </td>
                               <!--- nama_kategori diambil dari join yang ada di controller produk yang sudah dibuatkan join -->

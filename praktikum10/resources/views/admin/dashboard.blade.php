@@ -1,4 +1,4 @@
 @extends('admin.layout.appadmin')
 @section('content')
-    ini adalah Admin
+    <h1>ini adalah Admin</h1>
 @endsection
