@@ -25,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Bikin route untuk dashboard pake controller
+Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/', function () {
     return view('welcome');
 });

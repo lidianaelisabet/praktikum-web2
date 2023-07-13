@@ -22,7 +22,7 @@ require_once 'dbkoneksi.php';
 
       if($_proses == "Simpan"){
       // data baru
-      $sql = "INSERT INTO pesanan (nama_pemesan, tanggal, alamat_pemesan, jumlah_pesanan, produk_id) VALUES (?,?,?,?,?)";
+      $sql = "INSERT INTO pesanan (nama_pemesan,tanggal,alamat_pemesan,jumlah_pesanan,produk_id) VALUES (?,?,?,?,?)";
       }else if($_proses == "Update"){
       $ar_data[]=$_POST['idedit'];// ? 5
       $sql = "UPDATE pesanan SET nama_pemesan=?,tanggal=?,alamat_pemesan=?,jumlah_pesanan=?,produk_id=? WHERE id=?";

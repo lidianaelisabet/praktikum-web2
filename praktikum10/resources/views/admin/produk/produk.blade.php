@@ -73,8 +73,8 @@
                                 <a href="{{ url('produk/edit/' . $p->id) }}" class="btn btn-warning">Edit</a>
                                 {{-- Buat tombol delete --}}
                                 @if (Auth::user()->role == 'admin')
-	        <a href="{{ url('produk/delete/' . $p->id) }}" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus produk?')">Delete</a>
-            @endif
+	                             <a href="{{ url('produk/delete/' . $p->id) }}" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus produk?')">Delete</a>
+                              @endif
                                   
                             </td>
                               <!--- nama_kategori diambil dari join yang ada di controller produk yang sudah dibuatkan join -->
